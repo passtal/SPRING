@@ -1,0 +1,44 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-SampleApplication<sample>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.aloha.sample.SampleApplication",
+            "projectName": "sample",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringDiApplication<spring-di>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.aloha.spring_di.SpringDiApplication",
+            "projectName": "spring-di",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringDi2Application<spring-di2>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.aloha.spring_di2.SpringDi2Application",
+            "projectName": "spring-di2",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringDi3Application<spring-di3>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.aloha.spring_di3.SpringDi3Application",
+            "projectName": "spring-di3",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
