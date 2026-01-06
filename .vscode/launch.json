@@ -38,6 +38,27 @@
             "mainClass": "com.aloha.spring_di3.SpringDi3Application",
             "projectName": "spring-di3",
             "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=49847 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=spring-di3"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringAopApplication<spring-aop>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.aloha.spring_aop.SpringAopApplication",
+            "projectName": "spring-aop",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SpringMvcApplication<spring-mvc>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.aloha.spring_mvc.SpringMvcApplication",
+            "projectName": "spring-mvc",
+            "args": "",
             "envFile": "${workspaceFolder}/.env"
         }
     ]
