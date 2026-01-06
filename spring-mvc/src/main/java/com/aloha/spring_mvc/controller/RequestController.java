@@ -1,15 +1,19 @@
 package com.aloha.spring_mvc.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-
-import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RequestMethod;
+
+import lombok.extern.slf4j.Slf4j;
 
 
 
@@ -57,7 +61,8 @@ public class RequestController {
      */
     // @RequestMapping(value="/", method=RequestMethod.GET)
     @PostMapping("/board")
-    public String requestPost(@RequestParam("no") Long no) {
+    // required = false 로 설정하게 되면 특정값의 매핑이 null 이어도 에러가 발생하지 않고 넘어감
+    public String requestPost(@RequestParam(name = "no", required = false) Long no) {
         log.info("[POST] - /request/board");
         log.info("no : {}", no);
         return "redirect:/request/board/list";
@@ -106,6 +111,59 @@ public class RequestController {
         log.info("[POST] = /request/board");
         log.info("헤더 매핑 ... ");
         return "SUCCESS";
+    }
+
+    /**
+     * PUT 매핑
+     * @param param
+     * @return
+     */
+    @ResponseBody
+    // @RequestMapping(value="/", method=RequestMethod.GET)
+    @PutMapping("/board")
+    public String requestPut() {
+        log.info("[PUT] - /request/board");
+        return "SUCCESS";
+    }
+    
+    /**
+     * 컨텐츠 타입 매핑
+     * @return
+     * - Content -Type 헤더의 값으로 매핑
+     * - consumes = "컨텐츠타입값"
+     */
+    // @RequestMapping(value="/board", method=RequestMethod.POST
+    //                 ,consumes = "application/xml"
+    // )
+    @ResponseBody
+    @PutMapping(value="/board", consumes = "application/xml")
+    public String requestMethodName() {
+        log.info("[POST] - /request/board");
+        log.info("컨텐츠 타입 매빙");
+        return "SUCCESS - XML";
+    }
+
+    /**
+     * Accept 매핑
+     * @param param
+     * @return
+     * - Accept 헤더의 값으로 매핑
+     * - Accept 헤더 ?
+     *  : 응답받을 컨텐츠 타입을 서버에게 알려주는 헤더
+     *  - produces = "컨텐츠 타입"
+     */
+    @ResponseBody
+    // @RequestMapping(value="/board", method=RequestMethod.POST
+    //                 ,produces = "application/json"
+    // )
+    @PostMapping(value="/board", produces="application/json")
+    public Map<?, ?> requestAccept() {
+        log.info("[POST] - /request/board");
+        log.info("Accept 매핑..");
+        Map<String, String> map = new HashMap<>();
+        map.put("key1", "value1");
+        map.put("key2", "value2");
+        return map;
     }
     
 }
