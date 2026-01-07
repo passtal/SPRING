@@ -52,7 +52,7 @@ public class ModelController {
 	 * 요청 경로 : /model/person2?name=김조은&age=20
 	 * 			* 요청 파라미터의 변수명들을 객체의 필드(멤버변수)로 자동으로 매핑해준다.
      * @ModelAttribute 를 생략해도 Model에 문제없이 등록될 수 있다.
-     * ex) 객체인 경우
+     * ex - 객체인 경우
      * ※ 자동 등록이 안되는 경우
      * → 기본타입, Wrapper(Long, Integer)
 	 * @param person
