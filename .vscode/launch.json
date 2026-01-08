@@ -60,6 +60,16 @@
             "projectName": "spring-mvc",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-SbbApplication<sbb>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.mysite.sbb.SbbApplication",
+            "projectName": "sbb",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
