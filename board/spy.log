@@ -1,0 +1,1 @@
+1767923360559|11|statement|connection 0|url jdbc:p6spy:mysql://localhost:3306/aloha?serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&useSSL=false&autoReconnection=true&autoReconnection=true|SELECT *     FROM board     ORDER BY created_at DESC|SELECT *     FROM board     ORDER BY created_at DESC
