@@ -18,13 +18,15 @@
                     </div>
                     <table class="table table-bordered table striped table-hover table-responsive mt-3 text-center">
                         <colgroup>
-                            <col class="col-1">     <!-- 썸네일 -->
-                            <col class="col-3">     <!-- 번호 -->
-                            <col class="col-2">     <!-- 제목 -->
+                            <col class="col-2">     <!-- 썸네일 -->
+                            <col class="col-1">     <!-- 번호 -->
+                            <col class="col-3">     <!-- 제목 -->
+                            <col class="col-2">     <!-- 작성자 -->
                             <col class="col-2">     <!-- 등록일자 -->
                             <col class="col-2">     <!-- 수정일자 -->
                         </colgroup>
                         <tr class="table-dark">
+                            <th>썸네일</th>
                             <th width="150">번호</th>
                             <th width="300">제목</th>
                             <th>작성자</th>
@@ -33,7 +35,7 @@
                         </tr>
                         <th:block th:if="${list == null || list.isEmpty()}">
                             <tr>
-                                <td colsplan="5">조회된 데이터가 없습니다.</td>
+                                <td colsplan="6">조회된 데이터가 없습니다.</td>
                             </tr>
                         </th:block>
                         <th:block th:each="board : ${list}">
