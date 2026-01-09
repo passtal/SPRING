@@ -67,4 +67,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         WHERE id = #{id}
     </delete>
 
+    <!-- 부모 기준 목록 -->
+    <select id="listByParent" resultType="Files">
+        SELECT *
+        FROM file
+        WHERE parent_table = #{parentTable}
+            AND parent_no = #{parentNo}
+        ORDER BY sort_order ASC, created_at DESC
+    </select>
+
 </mapper>

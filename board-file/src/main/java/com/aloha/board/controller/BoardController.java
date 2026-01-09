@@ -42,6 +42,8 @@ public class BoardController {
   public String list(Model model) throws Exception {
     // 데이터 요청
     List<Board> list = boardService.list();
+    log.info("### 게시글 목록 ###");
+    log.info("# " + list);
     // 모델 등록
     model.addAttribute("list", list);
     // 뷰 지정

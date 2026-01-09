@@ -18,8 +18,13 @@ public class Board {
   private Date createdAt;
   private Date updatedAt;
 
+  Files file;
+
   // 업로드 파일 목록
   private List<MultipartFile> files;
+
+  // 저장된 파일 목록
+  private List<Files> fileList;
 
   public Board() {
     this.id = UUID.randomUUID().toString();

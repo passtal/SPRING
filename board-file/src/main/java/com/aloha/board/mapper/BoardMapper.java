@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Mapper;
 
 import com.aloha.board.dto.Board;
 
+
+
 @Mapper
 public interface BoardMapper {
   // 게시글 목록

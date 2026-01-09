@@ -31,3 +31,16 @@ VALUES
 
 -- 외래키 활성화
 SET FOREIGN_KEY_CHECKS=1;
+
+
+-- board 테이블과 file 테이블 조인
+SELECT b.no
+      ,b.title
+      ,f.*
+FROM board b
+    ,file f
+WHERE b.no = f.parent_no
+  AND f.parent_table = 'board'
+;
+
+SELECT * FROM board;
