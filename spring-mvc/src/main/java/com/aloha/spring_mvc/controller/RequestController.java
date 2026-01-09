@@ -304,7 +304,7 @@ public class RequestController {
   /**
    * 파일 업로드
    * @return
-   * @throws IOException 
+   * @throws IOException
    */
   @ResponseBody
   @PostMapping("/file")
@@ -335,7 +335,7 @@ public class RequestController {
   /**
    * 다중 파일 업로드
    * @return
-   * @throws IOException 
+   * @throws IOException
    */
   @ResponseBody
   @PostMapping("/file/multi")
@@ -470,5 +470,4 @@ public class RequestController {
     return "SUCCESS";
   }
   
-
 }
