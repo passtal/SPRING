@@ -26,9 +26,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </select>
 
     <!-- 파일 등록 -->
+    <!-- content_type :: #{contentType} 누락된 곳 추가 -->
     <insert id="insert">
-        INSERT INTO file ( id, parent_table, parent_no, name, path, size, sort_order, is_main)
-        VALUES ( #{id}, #{parentTable}, #{parentNo}, #{name}, #{path}, #{size}, #{sortOrder}, #{isMain})
+        INSERT INTO file ( id, parent_table, parent_no, name, path, size, content_type, sort_order, is_main)
+        VALUES ( #{id}, #{parentTable}, #{parentNo}, #{name}, #{path}, #{size}, #{contentType}, #{sortOrder}, #{isMain})
     </insert>
 
     <!-- 파일 수정 -->

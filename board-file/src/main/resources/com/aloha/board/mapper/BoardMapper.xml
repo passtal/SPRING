@@ -12,6 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         <result property="content" column="content" />
         <result property="createdAt" column="created_at" />
         <result property="updatedAt" column="updated_at" />
+        <!-- 多 : 多 매핑 -->
         <collection property="fileList"
                     ofType="Files"
                     select="listByParent"
@@ -25,7 +26,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         WHERE parent_table = #{parentTable}
           AND parent_no = #{parentNo}
     </select>
-
+    
+    <!-- 게시글 목록 -->
     <select id="list" resultMap="boardMap">
         SELECT b.*
               ,'board' AS parent_table
@@ -33,9 +35,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         ORDER BY created_at DESC
     </select>
 
-    <select id="select" resultType="Board">
-        SELECT *
-        FROM board
+    <!-- 게시글 조회 -->
+    <select id="select" resultMap="boardMap">
+        SELECT b.*
+              ,'board' AS parent_table
+        FROM board b
         WHERE no = #{no}
     </select>
 
