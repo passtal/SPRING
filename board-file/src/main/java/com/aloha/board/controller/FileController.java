@@ -1,11 +1,16 @@
 package com.aloha.board.controller;
 
 import org.springframework.http.HttpHeaders;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -46,6 +51,17 @@ public class FileController {
             "inline; filename\"" + file.getName() + "\"")
             .contentType(MediaType.parseMediaType(file.getContentType()))
             .body(resource);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Map<?,?>> deleteFile(@PathVariable("id") String id) throws Exception {
+        boolean result = fileService.deleteById(id);
+        if (!result) {
+            return ResponseEntity.notFound().build();
+        }
+        Map<String, Object> response = new HashMap<>();
+        response.put("SUCCESS", true);
+        return ResponseEntity.ok(response);
     }
     
 

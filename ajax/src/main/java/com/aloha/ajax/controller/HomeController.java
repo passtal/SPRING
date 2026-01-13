@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import lombok.extern.slf4j.Slf4j;
 
 
+
+
 @Slf4j
 @Controller
 public class HomeController {
@@ -15,11 +17,27 @@ public class HomeController {
       return "index";
   }
 
+  // XMLHttpRequest
   @GetMapping("/ajax/xhr")
   public String xhr() {
     log.info("XMLHttpRequest...");
     return "ajax/xhr";
   }
   
+  // fetch
+  @GetMapping("/ajax/fetch")
+  public String fetch() {
+    log.info("fetch...");
+    return "ajax/fetch";
+  }
+
+  // jquery
+  @GetMapping("/ajax/jquery")
+  public String jquery() {
+    log.info("jQuery $.ajax()...");
+    return "ajax/jquery";
+  }
   
+
+
 }

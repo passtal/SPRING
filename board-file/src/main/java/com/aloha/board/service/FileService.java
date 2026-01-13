@@ -29,4 +29,5 @@ public interface FileService {
 
   // 파일 업로드
   int upload(List<MultipartFile> files, ParentTable parentTable, Integer parentNo) throws Exception;
+  List<Files> listByParent(Files files) throws Exception;
 }
