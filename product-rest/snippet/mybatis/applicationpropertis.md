@@ -1,5 +1,3 @@
-spring.application.name=product-rest
-
 # 데이터 소스 - MySQL
 
 # 기본 데이터 소스
@@ -18,7 +16,7 @@ mybatis.mapper-locations=classpath:**/mapper/*.xml
 # 로그 레벨 설정
 
 # level : TRACE, DEBUG, INFO, WARN, ERROR
-logging.level.com.aloha.**=INFO
+logging.level.com.aloha.board=INFO
 
 # ANSI 컬러 출력 설정
 spring.output.ansi.enabled=ALWAYS
