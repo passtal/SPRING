@@ -18,7 +18,9 @@ public class Board {
   private Date createdAt;
   private Date updatedAt;
 
-  Files file;
+
+  // 메인 파일
+  private Files mainFile;
 
   // 업로드 파일 목록
   private List<MultipartFile> files;

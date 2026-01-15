@@ -100,6 +100,26 @@
             "projectName": "ajax",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-BoardPageApplication<board-pagehelper>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.aloha.board.BoardPageApplication",
+            "projectName": "board-pagehelper",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ProductRestApplication<product-rest>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.aloha.product_rest.ProductRestApplication",
+            "projectName": "product-rest",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
