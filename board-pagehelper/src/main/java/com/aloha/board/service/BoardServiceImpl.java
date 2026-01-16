@@ -87,12 +87,13 @@ public class BoardServiceImpl implements BoardService {
 
   @Override
   public PageInfo<Board> page(int page, int size) throws Exception {
-    // PageHelper.startPage(현재 번호, 페이지당 데이터 수)
+    // ⭐ PageHelper.startPage(현재 번호, 페이지당 데이터 수)
     PageHelper.startPage(page, size);
     List<Board> list = boardMapper.list();
-  }
 
-  // PageInfo<DTO>(리스트, 노출 페이지 수)
-  PageInfo<Board> pageInfo = new PageInfo<>(list, 10);
-  return pageInfo;
+    // ⭐ PageInfo<DTO>( 리스트, 노출 페이지 수 )
+    PageInfo<Board> pageInfo = new PageInfo<>(list,10);
+    return pageInfo;
+  }
+  
 }

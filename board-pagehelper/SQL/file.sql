@@ -1,6 +1,5 @@
--- Active: 1767915726149@@127.0.0.1@3306@aloha
+-- Active: 1765956701887@@127.0.0.1@3306@aloha
 -- 파일 테이블
-
 CREATE TABLE `file` (
   `no` int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `id` varchar(64) DEFAULT NULL UNIQUE,

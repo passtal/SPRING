@@ -33,6 +33,5 @@ public class SwaggerConfig {
                         .contact(new Contact().name("Passtal").email("passtal@gmail.com"))
                     );
     }
-
     
 }

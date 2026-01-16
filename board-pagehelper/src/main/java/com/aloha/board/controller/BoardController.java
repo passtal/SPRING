@@ -48,17 +48,16 @@ public class BoardController {
   ) throws Exception {
     // 데이터 요청
     // List<Board> list = boardService.list();
-
-    // PageHelper 라이브러리로 페이징 처리
-    long page = (int) pagination.getPage();
-    long size = (int) pagination.getSize();
+    // ⭐ PageHelper 라이브러리로 페이징 처리
+    int page = (int) pagination.getPage();
+    int size = (int) pagination.getSize();
     PageInfo<Board> pageInfo = boardService.page(page, size);
     model.addAttribute("pageInfo", pageInfo);
     List<Board> list = pageInfo.getList();
 
     log.info("pageInfo : {}", pageInfo);
 
-    // pagination 객체로 직접 페이징 처리
+    // ⭐ Pagination 객체로 직접 페이징 처리
     List<Board> list2 = boardService.page(pagination);
 
     log.info("### 게시글 목록 ###");
@@ -69,10 +68,10 @@ public class BoardController {
 
     // Uri 빌더
     String  pageUri = UriComponentsBuilder.fromPath("/board/list")
-                                          // Pagination(직접구현)
+                                          // Pagination (직접구현)
                                           // .queryParam("size", pagination.getSize())
                                           // .queryParam("count", pagination.getCount())
-                                          // PageHelper(라이브러리)
+                                          // PageHelper (라이브러리)
                                           .queryParam("size", pageInfo.getSize())
                                           .queryParam("count", pageInfo.getPageSize())
                                           .build()

@@ -1,4 +1,4 @@
--- Active: 1767915726149@@127.0.0.1@3306@aloha
+-- Active: 1765956701887@@127.0.0.1@3306@aloha
 -- 데이터베이스 생성
 CREATE DATABASE IF NOT EXISTS aloha;
 

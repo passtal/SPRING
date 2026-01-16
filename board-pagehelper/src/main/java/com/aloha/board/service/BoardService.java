@@ -12,7 +12,7 @@ public interface BoardService {
   // 페이징 목록 ⚡ (직접 구현)
   List<Board> page(Pagination pagination) throws Exception;
   // 페이징 목록 ⚡ (PageHelper)
-  PageInfo<Board> page(long page, long size) throws Exception;
+  PageInfo<Board> page(int page, int size) throws Exception;
   // 게시글 조회
   Board select(Integer no) throws Exception;
   // 게시글 등록
